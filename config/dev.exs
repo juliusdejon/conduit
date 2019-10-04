@@ -43,6 +43,7 @@ config :eventstore, EventStore.Storage,
   password: "postgres",
   database: "conduit_eventstore_dev",
   hostname: "localhost",
+  port: 5432,
   pool_size: 10
 
 # Configure the read store database
@@ -52,4 +53,5 @@ config :conduit, Conduit.Repo,
   password: "postgres",
   database: "conduit_readstore_dev",
   hostname: "localhost",
+  port: 5433,
   pool_size: 10

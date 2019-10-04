@@ -1,0 +1,22 @@
+version: "3"
+services:
+  eventstore:
+    image: postgres:10.5-alpine
+    network_mode: bridge
+    ports:
+      - 5432:5432
+    container_name: eventstore
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=conduit_eventstore_dev
+  readstore:
+    image: postgres:10.5-alpine
+    network_mode: bridge
+    ports:
+      - 5433:5432
+    container_name: readstore
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=conduit_readstore_dev
